@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model attachments {
+  id             String @id @map("_id")
+  data           String
+  name           String
+  type           String
+  webContentLink String
+  created_at     String
+}
