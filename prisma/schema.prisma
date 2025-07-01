@@ -9,9 +9,9 @@ datasource db {
 
 model attachments {
   id             String @id @map("_id")
-  data           String
-  name           String
-  type           String
-  webContentLink String
-  created_at     String
+  data           String?
+  name           String?
+  type           String?
+  webContentLink String?
+  created_at     String?
 }
