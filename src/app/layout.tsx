@@ -1,6 +1,5 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Suspense } from 'react'
 
 export default function RootLayout({
   children,
@@ -12,7 +11,9 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-        {children}
+        <Suspense>
+          {children}
+        </Suspense>
       </body>
     </html>
   );

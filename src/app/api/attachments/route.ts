@@ -25,14 +25,16 @@ export async function GET(req: Request) {
       }
     })
 
-    await prisma.categories.update({
-      where: {
-        id: category_db.id
-      },
-      data: {
-        unreaded: 0
-      }
-    })
+    if (category_db) { 
+      await prisma.categories.update({
+        where: {
+          id: category_db.id
+        },
+        data: {
+          unreaded: 0
+        }
+      })
+    }
 
     return NextResponse.json({ data }, {status: 200})
   } catch (error) {
